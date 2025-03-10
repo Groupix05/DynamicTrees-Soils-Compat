@@ -1,0 +1,14 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "grounded:block/rooted_grass_block"
+      }
+    },
+    {
+      "apply": {
+        "model": "dynamictrees:block/roots_tint_2"
+      }
+    }
+  ]
+}

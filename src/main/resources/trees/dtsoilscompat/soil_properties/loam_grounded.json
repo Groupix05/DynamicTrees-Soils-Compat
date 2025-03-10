@@ -1,0 +1,5 @@
+{
+  "only_if_loaded": "grounded",
+  "primitive_soil": "grounded:loam",
+  "acceptable_soils": [ "dirt_like" ]
+}

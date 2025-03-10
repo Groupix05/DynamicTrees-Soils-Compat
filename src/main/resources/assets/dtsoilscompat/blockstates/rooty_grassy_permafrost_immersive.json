@@ -1,0 +1,14 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "immersive_weathering:block/grassy_permafrost"
+      }
+    },
+    {
+      "apply": {
+        "model": "dynamictrees:block/roots_tint_2"
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+license="MIT"
+modLoader="javafml"
+loaderVersion="[40,)"
+issueTrackerURL="https://github.com/DynamicTreesTeam/DynamicTrees/issues"
+
+[[mods]]
+modId="dtsoilscompat"
+version="${file.jarVersion}"
+displayName="Dynamic Trees Soils Compat"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/dynamic-trees-for-immersive-weathering-soils"
+logoFile="logo.png"
+credits="D1scoball, Groupix05"
+authors="MrPeach774"
+description='''
+Adds Dynamic Trees compatibility for modded soils.
+For Immersive Weathering and Grounded.
+'''
+
+[[dependencies.dtsoilscompat]]
+    modId="forge"
+    mandatory=true
+    versionRange="[40,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.dtsoilscompat]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2,1.20.1]"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.dtsoilscompat]]
+    modId="dynamictrees"
+    mandatory=true
+    versionRange="[1.0.4,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.dtsoilscompat]]
+    modId="immersive_weathering"
+    mandatory=false
+    versionRange="[1.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.dtsoilscompat]]
+    modId="grounded"
+    mandatory=false
+    versionRange="[0.1.0,)"
+    ordering="AFTER"
+    side="BOTH"

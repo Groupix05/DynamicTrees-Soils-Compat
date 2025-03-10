@@ -1,0 +1,5 @@
+{
+  "only_if_loaded": "immersive_weathering",
+  "primitive_soil": "immersive_weathering:sandy_dirt",
+  "acceptable_soils": [ "dirt_like" ]
+}

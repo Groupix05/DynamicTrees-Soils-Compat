@@ -1,0 +1,5 @@
+{
+  "only_if_loaded": "grounded",
+  "primitive_soil": "grounded:permafrost",
+  "acceptable_soils": [ "dirt_like" ]
+}

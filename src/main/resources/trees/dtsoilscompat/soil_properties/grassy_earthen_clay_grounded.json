@@ -1,0 +1,7 @@
+{
+  "only_if_loaded": "grounded",
+  "primitive_soil": "grounded:grassy_earthen_clay",
+  "acceptable_soils": [ "dirt_like" ],
+  "foliage_tint_index":1,
+  "roots_tint_index":2
+}
