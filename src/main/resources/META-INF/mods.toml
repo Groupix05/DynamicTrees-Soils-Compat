@@ -9,8 +9,8 @@ version="${file.jarVersion}"
 displayName="Dynamic Trees Soils Compat"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/dynamic-trees-for-immersive-weathering-soils"
 logoFile="logo.png"
-credits="D1scoball, Groupix05"
-authors="MrPeach774"
+credits="D1scoball"
+authors="MrPeach774, Groupix05"
 description='''
 Adds Dynamic Trees compatibility for modded soils.
 For Immersive Weathering and Grounded.
