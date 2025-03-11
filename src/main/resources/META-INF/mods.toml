@@ -1,7 +1,7 @@
 license="MIT"
 modLoader="javafml"
 loaderVersion="[40,)"
-issueTrackerURL="https://github.com/DynamicTreesTeam/DynamicTrees/issues"
+issueTrackerURL="https://github.com/Groupix05/DynamicTrees-Soils-Compat/issues"
 
 [[mods]]
 modId="dtsoilscompat"

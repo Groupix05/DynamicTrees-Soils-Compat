@@ -36,7 +36,7 @@ val modVersion = property("modVersion")
 val mcVersion = property("mcVersion")
 val AuthorName = property("AuthorName")
 
-version = "$mcVersion-$modVersion"
+version = "$modVersion"
 group = property("group")
 
 minecraft {

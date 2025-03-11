@@ -1,0 +1,5 @@
+{
+  "only_if_loaded": "immersive_weathering",
+  "primitive_soil": "immersive_weathering:cryosol",
+  "acceptable_soils": [ "dirt_like" ]
+}
