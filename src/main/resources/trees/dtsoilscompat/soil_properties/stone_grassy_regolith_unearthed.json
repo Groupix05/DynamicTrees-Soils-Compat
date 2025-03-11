@@ -1,0 +1,5 @@
+{
+  "only_if_loaded": "unearthed",
+  "primitive_soil": "unearthed:stone_grassy_regolith",
+  "acceptable_soils": [ "dirt_like" ]
+}

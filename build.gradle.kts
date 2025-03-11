@@ -97,6 +97,8 @@ dependencies {
     runtimeOnly(fg.deobf("curse.maven:selene-499980:6283242"))
     runtimeOnly(fg.deobf("curse.maven:immersive-weathering-forge-592449:6116941"))
     runtimeOnly(fg.deobf("curse.maven:grounded-1140983:6008571"))
+    runtimeOnly(fg.deobf("curse.maven:unearthed-406825:6223916"))
+    runtimeOnly(fg.deobf("curse.maven:hyle-609850:6223810"))
 }
 
 tasks.jar {

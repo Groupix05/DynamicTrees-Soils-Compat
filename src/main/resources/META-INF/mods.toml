@@ -50,3 +50,10 @@ For Immersive Weathering and Grounded.
     versionRange="[0.1.0,)"
     ordering="AFTER"
     side="BOTH"
+
+[[dependencies.dtsoilscompat]]
+    modId="unearthed"
+    mandatory=false
+    versionRange="[1.0.0,)"
+    ordering="AFTER"
+    side="BOTH"

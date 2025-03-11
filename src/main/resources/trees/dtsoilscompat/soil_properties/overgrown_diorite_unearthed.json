@@ -1,0 +1,5 @@
+{
+  "only_if_loaded": "unearthed",
+  "primitive_soil": "unearthed:overgrown_diorite",
+  "acceptable_soils": [ "dirt_like" ]
+}
