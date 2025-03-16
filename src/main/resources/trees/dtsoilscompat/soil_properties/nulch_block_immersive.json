@@ -1,0 +1,5 @@
+{
+  "only_if_loaded": "immersive_weathering",
+  "primitive_soil": "immersive_weathering:nulch_block",
+  "acceptable_soils": [ "nether_like", "nether_soil_like" ]
+}

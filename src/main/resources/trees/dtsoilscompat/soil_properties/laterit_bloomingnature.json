@@ -1,0 +1,10 @@
+{
+  "only_if_loaded": "bloomingnature",
+  
+  "type": "spreadable",
+  "primitive_soil": "bloomingnature:laterit",
+  "acceptable_soils": [ "stone_like" ],
+
+  "required_light": 9,
+  "spreadable_soils": [ "dt_soils:mossy_laterit" ]
+}

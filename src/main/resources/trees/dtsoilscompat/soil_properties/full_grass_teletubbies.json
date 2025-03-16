@@ -1,0 +1,5 @@
+{
+  "only_if_loaded": "teletubbies",
+  "primitive_soil": "teletubbies:full_grass",
+  "acceptable_soils": [ "dirt_like" ]
+}

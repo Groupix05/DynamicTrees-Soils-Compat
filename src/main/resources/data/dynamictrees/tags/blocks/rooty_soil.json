@@ -1,0 +1,172 @@
+{
+  "values": [
+    {
+      "id": "dtsoilscompat:rooty_beige_limestone_grassy_regolith",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_conglomerate_grassy_regolith",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_cryosol_immersive",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_earthen_clay_grounded",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_earthen_clay_immersive",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_fluvisol_immersive",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_gabbro_grassy_regolith",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_granodiorite_grassy_regolith",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_grassy_earthen_clay_grounded",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_grassy_earthen_clay_immersive",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_grassy_permafrost_grounded",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_grassy_permafrost_immersive",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_grassy_sandy_dirt_grounded",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_grassy_sandy_dirt_immersive",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_grassy_silt_grounded",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_grassy_silt_immersive",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_grey_limestone_grassy_regolith",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_humus_immersive",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_limestone_grassy_regolith",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_loam_grounded",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_loam_immersive",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_mudstone_grassy_regolith",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_mulch_block_immersive",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_nulch_block_immersive",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_overgrown_andesite",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_overgrown_diorite",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_overgrown_granite",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_permafrost_grounded",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_permafrost_immersive",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_phyllite_grassy_regolith",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_rhyolite_grassy_regolith",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_rooted_grass_grounded",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_rooted_grass_immersive",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_sandstone_grassy_regolith",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_sandy_dirt_grounded",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_siltstone_grassy_regolith",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_silt_grounded",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_silt_immersive",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_slate_grassy_regolith",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_stone_grassy_regolith",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_vertisol_immersive",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_white_granite_grassy_regolith",
+      "required": false
+    }
+  ]
+}

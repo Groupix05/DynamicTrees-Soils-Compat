@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "package": "mrpeach774.dtsoilscompat.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "dtsoilscompat.refmap.json",
+  "priority": 1000,
+  "mixins": [
+    "StoneTypeMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

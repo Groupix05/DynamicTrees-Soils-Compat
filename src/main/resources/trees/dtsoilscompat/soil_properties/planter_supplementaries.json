@@ -1,0 +1,5 @@
+{
+  "only_if_loaded": "supplementaries",
+  "primitive_soil": "supplementaries:planter",
+  "acceptable_soils": [ "dirt_like", "sand_like" ]
+}

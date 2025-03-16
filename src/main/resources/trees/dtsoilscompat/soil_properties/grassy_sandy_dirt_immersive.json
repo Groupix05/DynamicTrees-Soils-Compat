@@ -1,7 +1,7 @@
 {
   "only_if_loaded": "immersive_weathering",
   "primitive_soil": "immersive_weathering:grassy_sandy_dirt",
-  "acceptable_soils": [ "dirt_like" ],
+  "acceptable_soils": [ "dirt_like", "sand_like" ],
   "foliage_tint_index":1,
   "roots_tint_index":2
 }

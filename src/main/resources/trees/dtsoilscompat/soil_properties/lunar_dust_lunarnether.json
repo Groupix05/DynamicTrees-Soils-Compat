@@ -1,0 +1,5 @@
+{
+  "only_if_loaded": "lunarnether",
+  "primitive_soil": "lunarnether:lunar_dust",
+  "acceptable_soils": [ "sand_like" ]
+}
