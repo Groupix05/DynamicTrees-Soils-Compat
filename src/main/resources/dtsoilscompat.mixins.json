@@ -6,7 +6,8 @@
   "refmap": "dtsoilscompat.refmap.json",
   "priority": 1000,
   "mixins": [
-    "StoneTypeMixin"
+    "StoneTypeMixin",
+    "StoneReplacerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

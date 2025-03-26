@@ -1,0 +1,18 @@
+[
+  {
+    "_comment": "1/25 chance to spawn apple trees in plains biomes.",
+    "select": {
+      "name": "minecraft:.*",
+      "tag": "#forge:is_plains"
+    },
+    "apply": {
+      "species": {
+        "random": {
+          "apple_oak": 25
+        }
+      },
+      "density": 0,
+      "chance": 0.03
+    }
+  }
+]
