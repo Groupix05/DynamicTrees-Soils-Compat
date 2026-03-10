@@ -167,6 +167,22 @@
     {
       "id": "dtsoilscompat:rooty_white_granite_grassy_regolith",
       "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_composted_dirt_minecolonies",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_full_grass_teletubbies",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:lunar_dust_lunarnether",
+      "required": false
+    },
+    {
+      "id": "dtsoilscompat:rooty_planter_supplementaries",
+      "required": false
     }
   ]
 }
