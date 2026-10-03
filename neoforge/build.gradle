@@ -1,0 +1,96 @@
+plugins {
+    id 'multiloader-loader'
+    alias(nyfs.plugins.mdg.loader)
+    alias(nyfs.plugins.mod.publish)
+    alias(nyfs.plugins.regutils.loader)
+    id("com.nyfaria.moddingtools.dependencies")
+}
+
+neoForge {
+  version = nyfs.versions.neoforgeVersion.get()
+  def at = project(":common").file('src/main/resources/META-INF/accesstransformer.cfg')
+  if (at.exists()) {
+      accessTransformers = [at]
+  }
+  mods {
+      "${mod_id}" {
+          sourceSet(sourceSets.main)
+      }
+  }
+  runs {
+      client {
+          client()
+          systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+      }
+      server {
+          server()
+          systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+          programArgument '--nogui'
+      }
+      data {
+          data()
+          programArguments.addAll(
+            '--mod', project.mod_id,
+            '--all',
+            '--output', rootProject.project(":common").file('src/generated/resources/').getAbsolutePath(),
+            '--existing', rootProject.project(":common").file('src/main/resources/').getAbsolutePath(),
+            '--existing-mod', 'dynamictrees',
+            '--existing-mod', 'immersive_weathering',
+            '--existing-mod', 'grounded',
+            '--existing-mod', 'unearthed')
+      }
+  }
+}
+
+dependencies {
+    //DynamicTrees
+	  runtimeOnly("vazkii.patchouli:Patchouli:${patchouli_version}-NEOFORGE:api")
+    implementation("curse.maven:dynamictrees-${dynamic_trees_project}:${dynamic_trees_file}")
+
+    // DynamicTrees Tools/Utilities
+    runtimeOnly "curse.maven:jade-${jade_project}:${jade_file}"
+    runtimeOnly "curse.maven:jei-${jei_project}:${jei_file}"
+    runtimeOnly "maven.modrinth:cc-tweaked:${cc_tweaked_version}-neoforge,${minecraft_version}"
+    runtimeOnly "curse.maven:suggestion-provider-fix-${suggestion_provider_fix_project}:${suggestion_provider_fix_file}"
+    runtimeOnly "curse.maven:tagtooltips-${tagtooltips_project}:${tagtooltips_file}"
+
+    // Seasons Provider
+    implementation "curse.maven:glitchcore-${glitchcore_project}:${glitchcore_file}"
+    implementation "curse.maven:serene-seasons-${serene_seasons_project}:${serene_seasons_file}"
+
+    // Soil Providers:
+    implementation "curse.maven:selene-${moonlight_lib_project}:${moonlight_lib_file}"
+    implementation "maven.modrinth:grounded:${grounded_version}-neoforge,${minecraft_version}"
+    implementation "maven.modrinth:immersive-weather-renewed:${immersive_weathering_version}"
+    implementation "maven.modrinth:unearthed-unofficial-port:${unearthed_unofficial_port_version}-neoforge,${minecraft_version}"
+    // Hyle does not have a neoforge 1.21.1 port:
+    // runtimeOnly fg.deobf("curse.maven:hyle-609850:7736352")
+}
+
+publishMods {
+    file = jar.archiveFile
+    changelog = project(":common").file("changelog.md").text
+    type = STABLE
+    modLoaders.add("neoforge")
+    displayName = "${mod_name}-${minecraft_version}-[NeoForge]-${project.version}"
+    dryRun = dry_run.toBoolean()
+    if (curseforge_publishing_enabled.toBoolean()) {
+        curseforge {
+            projectId = curseforge_project_id
+            accessToken = curseforge_token
+            minecraftVersions.add(minecraft_version)
+            clientRequired = true
+            serverRequired = true
+            javaVersions.add(JavaVersion.VERSION_21)
+            announcementTitle = "Download NeoForge Version from CurseForge"
+            projectSlug = "${curseforge_project_slug}"
+        }
+    }
+    if (modrinth_publishing_enabled.toBoolean()) {
+        modrinth {
+            accessToken = modrinth_token
+            projectId = modrinth_project_id
+            minecraftVersions.add(minecraft_version)
+        }
+    }
+}

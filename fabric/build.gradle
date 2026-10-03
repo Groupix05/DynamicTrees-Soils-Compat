@@ -1,0 +1,78 @@
+plugins {
+    id 'multiloader-loader'
+    alias(nyfs.plugins.loom.loader)
+    alias(nyfs.plugins.mod.publish)
+    alias(nyfs.plugins.regutils.loader)
+    id("com.nyfaria.moddingtools.dependencies")
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+    mappings loom.layered() {
+        officialMojangMappings()
+        parchment("org.parchmentmc.data:parchment-${nyfs.versions.parchmentMinecraft.get()}:${nyfs.versions.parchmentVersion.get()}@zip")
+    }
+    modImplementation nyfs.fabric.loader
+    modImplementation nyfs.fabric.api
+    modImplementation nyfs.config.api.fabric
+    // Alias identifies incorrect version.
+    // modImplementation(nyfs.dynamictrees.fabric)
+
+    //DynamicTrees
+	  modRuntimeOnly("vazkii.patchouli:Patchouli:${patchouli_version}-FABRIC")
+    modImplementation("curse.maven:dynamictrees-${dynamic_trees_project}:${dynamic_trees_file}")
+
+    // DynamicTrees Tools/Utilities
+    modRuntimeOnly "curse.maven:jade-${jade_project}:${jade_file}"
+    modRuntimeOnly "curse.maven:jei-${jei_project}:${jei_file}"
+    // Disabled for now due to API mismatch from base nyfs multiloader plugins:
+    // modRuntimeOnly "maven.modrinth:cc-tweaked:${cc_tweaked_version}-fabric,${minecraft_version}"
+    modRuntimeOnly "curse.maven:tagtooltips-${tagtooltips_project}:${tagtooltips_file}"
+
+    // Seasons Provider
+    modImplementation "curse.maven:glitchcore-${glitchcore_project}:${glitchcore_file}"
+    modImplementation "curse.maven:serene-seasons-${serene_seasons_project}:${serene_seasons_file}"
+
+    // Soil Providers:
+    modImplementation "curse.maven:selene-${moonlight_lib_project}:${moonlight_lib_file}"
+    modImplementation "maven.modrinth:grounded:${grounded_version}-fabric,${minecraft_version}"
+    modImplementation "maven.modrinth:immersive-weather-renewed:${immersive_weathering_version}"
+    // Unearthed does not have a fabric 1.21.1 port:
+    // runtimeOnly "maven.modrinth:unearthed-unofficial-port:${unearthed_unofficial_port_version}-neoforge,${minecraft_version}"
+    // Hyle does not have a fabric 1.21.1 port:
+    // runtimeOnly fg.deobf("curse.maven:hyle-609850:7736352")
+}
+
+
+loom {
+    def aw = project(":common").file("src/main/resources/${mod_id}.accesswidener")
+    if (aw.exists()) {
+        accessWidenerPath.set(aw)
+    }
+    mixin {
+        defaultRefmapName.set("${mod_id}.refmap.json")
+    }
+    runs {
+        client {
+            client()
+            setConfigName("Fabric Client")
+            ideConfigGenerated(true)
+            runDir("runs/client")
+        }
+        server {
+            server()
+            setConfigName("Fabric Server")
+            ideConfigGenerated(true)
+            runDir("runs/server")
+        }
+        datagen {
+            client()
+            setConfigName('Fabric Datagen')
+            ideConfigGenerated(true)
+            runDir('runs/datagen')
+            vmArg("-Dfabric-api.datagen")
+            vmArg("-Dfabric-api.datagen.output-dir=${project(':common').file('src/generated/resources')}")
+            vmArg("-Dfabric-api.datagen.modid=${mod_id}")
+        }
+    }
+}
