@@ -1,0 +1,48 @@
+plugins {
+    id 'multiloader-common'
+    alias(nyfs.plugins.mdg.loader)
+    alias(nyfs.plugins.regutils.loader)
+    id("com.nyfaria.moddingtools.dependencies")
+}
+neoForge {
+    neoFormVersion = nyfs.versions.neoFormVersion.get()
+    def at = file('src/main/resources/META-INF/accesstransformer.cfg')
+    if (at.exists()) {
+        accessTransformers.from(at.absolutePath)
+    }
+    parchment {
+        minecraftVersion = nyfs.versions.parchmentMinecraft.get()
+        mappingsVersion = nyfs.versions.parchmentVersion.get()
+    }
+}
+configurations.all {
+    resolutionStrategy.cacheDynamicVersionsFor(1, "seconds")
+}
+
+dependencies {
+    compileOnly(nyfs.bundles.mixin.common.get())
+    annotationProcessor nyfs.mixin.extras.common.get()
+    compileOnly nyfs.config.api.common.get()
+    compileOnly(nyfs.dynamictrees.common)
+}
+
+configurations {
+    commonJava {
+        canBeResolved = false
+        canBeConsumed = true
+    }
+    commonResources {
+        canBeResolved = false
+        canBeConsumed = true
+    }
+}
+
+artifacts {
+  sourceSets.main.resources {
+    srcDir("src/generated/resources")
+  }
+
+  commonJava sourceSets.main.java.sourceDirectories.singleFile
+  commonResources sourceSets.main.resources.sourceDirectories.files
+}
+

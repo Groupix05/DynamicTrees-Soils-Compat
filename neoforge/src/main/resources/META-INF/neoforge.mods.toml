@@ -1,0 +1,64 @@
+modLoader = "javafml"
+loaderVersion = "${neoforge_loader_version_range}"
+license = "${license}"
+issueTrackerURL = "https://github.com/Groupix05/DynamicTrees-Soils-Compat/issues"
+
+[[mods]]
+modId = "${mod_id}"
+version = "${version}"
+displayName = "${mod_name}"
+displayURL = "https://www.curseforge.com/minecraft/mc-mods/dynamic-trees-for-immersive-weathering-soils"
+logoFile = "logo.png"
+credits = "${credits}"
+authors = "${mod_author}"
+description = "${description}"
+
+[[dependencies.${mod_id}]]
+    modId="neoforge"
+    type="required"
+    versionRange="${neoforge_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="dynamictrees"
+    type="required"
+    versionRange="${dynamic_trees_version_range}"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="immersive_weathering"
+    type="optional"
+    versionRange="${immersive_weathering_version_range}"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="grounded"
+    type="optional"
+    versionRange="${grounded_version_range}"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="unearthed"
+    type="optional"
+    versionRange="${unearthed_version_range}"
+    ordering="AFTER"
+    side="BOTH"
+
+# Hyle not ported to 1.21.1 neoforge
+# [[dependencies.${mod_id}]]
+#     modId="hyle"
+#     type="optional"
+#     versionRange="${hyle_version_range}"
+#     ordering="AFTER"
+#     side="BOTH"

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "${mod_id}",
+  "version": "${version}",
+  "name": "${mod_name}",
+  "description": "${description}",
+  "authors": ["${mod_author}"],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/dynamic-trees-soils-compat",
+    "sources": "https://github.com/Groupix05/DynamicTrees-Soils-Compat"
+  },
+  "license": "${license}",
+  "icon": "logo.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.mrpeach774.dtsoilscompat.DTSoilsCompat"],
+    "dynamictrees": ["com.mrpeach774.dtsoilscompat.DTEntryPoint"]
+  },
+  "depends": {
+    "fabricloader": ">=${fabric_loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
+    "java": ">=${java_version}",
+    "dynamictrees": "${dynamic_trees_version_range}"
+  },
+  "suggests": {
+    "dynamictreesplus": "*",
+    "immersive_weathering": "${immersive_weathering_version_range}",
+    "grounded": "${grounded_version_range}"
+  }
+}

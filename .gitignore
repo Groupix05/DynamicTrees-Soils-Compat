@@ -5,13 +5,15 @@ bin
 .metadata
 .classpath
 .project
+.factorypath
 
 # idea
 out
 *.ipr
 *.iws
 *.iml
-.idea
+.idea/*
+!.idea/scopes
 
 # gradle
 build
@@ -20,4 +22,5 @@ build
 # other
 eclipse
 run
-libs
+runs
+/neoforge/mcmodsrepo

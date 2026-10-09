@@ -1,138 +1,26 @@
-buildscript {
-    repositories {
-        maven { url = 'https://maven.minecraftforge.net' }
-        mavenCentral()
-    }
-    dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-        classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7+'
-    }
-}
 
 plugins {
-    id 'eclipse'
-    id 'idea'
-    id 'maven-publish'
-    id "com.modrinth.minotaur" version "2.+"
-    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
-    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
-    id 'com.matthewprenger.cursegradle' version "1.4.0"
+    id "org.jetbrains.gradle.plugin.idea-ext" version "1.1.7"
+    alias(nyfs.plugins.loom) apply false
+    alias(nyfs.plugins.mdg) apply false
+    alias(nyfs.plugins.regutils)
 }
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'org.spongepowered.mixin'
+configurations.all {
+    resolutionStrategy.cacheDynamicVersionsFor(1, "seconds")
+}
 
-version = "${mcVersion}-${modVersion}"
-group = "${group}"
-
-java.toolchain.languageVersion = JavaLanguageVersion.of(17)
-
-println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
-
-minecraft {
-    mappings channel: 'parchment', version: "${mappingsVersion}-${mcVersion}"
-    runs {
-        configureEach {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forgegradle.runs.dev', 'true'
-            property 'forge.logging.console.level', 'debug'
-            mods {
-                "${modId}" {
-                    source sourceSets.main
-                }
-            }
+registrationUtils {
+    group "${project.group}.${mod_id}.registration"
+    projects {
+        fabric {
+            type 'fabric'
         }
-        client {
-            jvmArgs "-Xmx2048M"
+        neoforge {
+            type 'neoforge'
         }
-
-        server {
-            property 'forgegradle.runs.runServer', 'true'
-        }
-
-        data {
-            // add runData info
-            property 'forgegradle.runs.runData', 'true'
-            args(
-                '--mod', modId,
-                '--all',
-                '--output', file('src/generated/resources/'),
-                '--existing', file('src/main/resources/'),
-                '--existing-mod', 'dynamictrees'
-            )
+        common {
+            type 'common'
         }
     }
 }
-
-sourceSets.main.resources {
-    srcDir 'src/generated/resources'
-    exclude '**/*.cache'
-}
-
-repositories {
-    maven {
-        url "https://www.cursemaven.com"
-    }
-    maven {
-        url "https://harleyoconnor.com/maven"
-    }
-    flatDir {
-        dirs("libs")
-    }
-    // Other repositories can go above or below Modrinth's. We don't need priority :)
-    exclusiveContent {
-        forRepository {
-            maven {
-                name = "Modrinth"
-                url = "https://api.modrinth.com/maven"
-            }
-        }
-        forRepositories(fg.repository) // Only add this if you're using ForgeGradle, otherwise remove this line
-        filter {
-            includeGroup "maven.modrinth"
-        }
-    }
-}
-
-dependencies {
-    //libs
-    minecraft "net.minecraftforge:forge:${mcVersion}-${forgeVersion}"
-
-    //DynamicTrees
-    implementation fg.deobf("com.ferreusveritas.dynamictrees:DynamicTrees-${mcVersion}:${dynamicTreesVersion}")
-
-    //DynmaicTrees Tools/Utilities
-    runtimeOnly fg.deobf("curse.maven:jade-324717:5072729")
-    runtimeOnly fg.deobf("curse.maven:jei-238222:5101366")
-    runtimeOnly fg.deobf("curse.maven:cc-tweaked-282001:5118388")
-    runtimeOnly fg.deobf("curse.maven:suggestion-provider-fix-469647:4591193")
-
-    //other
-    runtimeOnly fg.deobf("curse.maven:selene-499980:7664875")
-    runtimeOnly fg.deobf("curse.maven:immersive-weathering-forge-592449:6116941")
-    runtimeOnly fg.deobf("curse.maven:grounded-1140983:6008571")
-    runtimeOnly fg.deobf("curse.maven:unearthed-406825:7736406")
-    runtimeOnly fg.deobf("curse.maven:hyle-609850:7736352")
-}
-
-jar {
-    manifest {
-        attributes([
-                "Specification-Title"     : "${modId}",
-                "Specification-Vendor"    : "${AuthorName}",
-                "Specification-Version"   : "1", // We are version 1 of ourselves
-                "Implementation-Title"    : "${modId}",
-                "Implementation-Version"  : "${modVersion}",
-                "Implementation-Vendor"   : "${AuthorName}",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
-        ])
-    }
-}
-
-tasks.register('deleteCache') {
-    delete 'src/generated/resources/.cache'
-}
-
-jar.dependsOn deleteCache
-
 
