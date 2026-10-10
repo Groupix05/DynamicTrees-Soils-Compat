@@ -54,11 +54,3 @@ description = "${description}"
     versionRange="${unearthed_version_range}"
     ordering="AFTER"
     side="BOTH"
-
-# Hyle not ported to 1.21.1 neoforge
-# [[dependencies.${mod_id}]]
-#     modId="hyle"
-#     type="optional"
-#     versionRange="${hyle_version_range}"
-#     ordering="AFTER"
-#     side="BOTH"

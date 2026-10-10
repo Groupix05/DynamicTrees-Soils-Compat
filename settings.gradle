@@ -5,6 +5,7 @@ pluginManagement {
         maven { url = 'https://maven.100media.dev/' }
         maven { url = 'https://maven.neoforged.net/releases' }
         maven { url = 'https://maven.fabricmc.net/' }
+        maven { url = 'https://harleyoconnor.com/maven' }
         // Extra Delight Dev Dependency Repositories:
         maven {
           // Maven for PatchouliProvider

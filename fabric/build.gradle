@@ -19,8 +19,8 @@ dependencies {
     // modImplementation(nyfs.dynamictrees.fabric)
 
     //DynamicTrees
-	  modRuntimeOnly("vazkii.patchouli:Patchouli:${patchouli_version}-FABRIC")
-    modImplementation("curse.maven:dynamictrees-${dynamic_trees_project}:${dynamic_trees_file}")
+    modRuntimeOnly("vazkii.patchouli:Patchouli:${patchouli_version}-FABRIC")
+    modImplementation("com.dtteam.dynamictrees:dynamictrees-fabric-${minecraft_version}:${dynamic_trees_version}")
 
     // DynamicTrees Tools/Utilities
     modRuntimeOnly "curse.maven:jade-${jade_project}:${jade_file}"
@@ -39,8 +39,6 @@ dependencies {
     modImplementation "maven.modrinth:immersive-weather-renewed:${immersive_weathering_version}"
     // Unearthed does not have a fabric 1.21.1 port:
     // runtimeOnly "maven.modrinth:unearthed-unofficial-port:${unearthed_unofficial_port_version}-neoforge,${minecraft_version}"
-    // Hyle does not have a fabric 1.21.1 port:
-    // runtimeOnly fg.deobf("curse.maven:hyle-609850:7736352")
 }
 
 
